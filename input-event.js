@@ -4,8 +4,7 @@ const InputEvent = require('input-event');
 
 module.exports = function (RED) {
 
-    RED.nodes.registerType("input-event", (config) => {
-
+    function NodeInputEvent(config) {
         RED.nodes.createNode(this, config);
 
         const inputDevice = config.name
@@ -22,5 +21,6 @@ module.exports = function (RED) {
                 code: data.code
             })
         }), 500);
-    });
+    }
+    RED.nodes.registerType("input-event", NodeInputEvent);
 }
