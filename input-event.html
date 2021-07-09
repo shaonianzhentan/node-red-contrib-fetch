@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('input-event', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "bridge.svg",
+        label: function () {
+            return this.name || "input-event";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="node-input-event">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> 键盘输入设备 </label>
+        <input type="text" id="node-input-name" placeholder="/dev/input/event3">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="input-event">
+<pre>
+# 安装input-utils
+sudo apt-get install input-utils
+
+# 列出所有输入设备
+sudo lsinput
+
+# 查看设备信息（这里的数字3指的是：/dev/input/event3 ）
+sudo input-events 3
+</pre>
+</script>
