@@ -3,7 +3,10 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            name: { value: "" }
+            name: { 
+                value: "", 
+                required: true
+            }
         },
         inputs: 0,
         outputs: 1,
@@ -14,7 +17,7 @@
     });
 </script>
 
-<script type="text/html" data-template-name="node-input-event">
+<script type="text/html" data-template-name="input-event">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> 键盘输入设备 </label>
         <input type="text" id="node-input-name" placeholder="/dev/input/event3">

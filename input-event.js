@@ -8,7 +8,7 @@ module.exports = function (RED) {
 
         RED.nodes.createNode(this, config);
 
-        const { inputDevice } = config
+        const inputDevice = config.name
         if (!fs.existsSync(inputDevice)) {
             return this.status({ fill: "red", shape: "ring", text: `未找到设备：${inputDevice}` });
         }
